@@ -18,11 +18,11 @@
             path: 'data2.json'
         });
         console.log(document.getElementById("animation"));
-        document.getElementById("animation").addEventListener("mouseover",function(){
+        document.getElementById("animation").addEventListener("mouseenter",function(){
             j2.play();
         },false);
         document.getElementById("animation").addEventListener("mouseout",function(){
-            j2.goToAndStop(0, true);
+            j2.goToAndStop(0, true);// 离开时返回第一帧并停止
         },false);
     </script>
 
