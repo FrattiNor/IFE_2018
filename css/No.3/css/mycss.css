@@ -1,0 +1,55 @@
+.ear-left{
+    transition: transform 2s;
+}
+/*.ear-left:hover{
+    transform: rotate(-45deg);
+}*/
+.ear-left1{
+    transform: rotate(-45deg);
+}
+.ear-right{
+    transition: transform 2s;
+}
+/*.ear-right:hover{
+    transform: rotate(45deg);
+}*/
+.ear-right1{
+    transform: rotate(45deg);
+}
+.eye-bottom2{
+    transition: transform 2s;
+}
+/*.eye-bottom2:hover{
+    transform: translate(0px,-20px);
+}*/
+.eye-bottom3{
+    transform: translate(0px,-20px);
+}
+.eye-core2{
+    transition: transform 2s;
+}
+/*.eye-core2:hover{
+    transform: scale(0.7,1);
+}*/
+.eye-core3{
+    transform: scale(0.7,1);
+}
+.face-red2{
+    transform: scale(0.7,1);
+    transition: opacity;
+}
+/*.face-red2:hover{
+    opacity: 0.5;
+}*/
+.face-red3{
+    opacity: 0.5;
+}
+.mouth-ani{
+    transition: border-radius 2s;
+}
+/*.mouth-ani:hover{
+    border-radius: 50%;
+}*/
+.mouth-ani2{
+    border-radius: 50%;
+}

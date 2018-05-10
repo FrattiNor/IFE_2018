@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    text-align: center;
+    margin: 20px;
+}
+.bottom{
+    border-bottom: 2px solid #36f;
+    transition: 2s;
+    margin-top: 5px;
+}
+.bottom1{
+    width: 0%;
+    margin-left: 50%;
+}
+.bottom2{
+    width: 120%;
+    margin-left: -10%;
+}
+.font{
+    display: inline-block;
+    padding: 5px;
+    transition: 2s;
+}
+.color1{
+    color: #000;
+}
+.color2{
+    color: #36f;
+}
+.button{
+    padding: 5px;
+    display: block;
+    margin: auto;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    outline: none;
+}
+.button:active{
+    color: #fff;
+    background-color: #3E74B5;
+}

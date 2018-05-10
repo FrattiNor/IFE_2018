@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    perspective: 1200px;
+    margin: 20px;
+    text-align: center;
+}
+.card{
+    transform-style: preserve-3d;
+    display: inline-block;
+    width: 250px;
+    height: 350px;
+    transition:transform 1s ease-in-out;
+}
+.true{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    background: url(../img/true.jpg);
+    backface-visibility:hidden;
+}
+.false{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    transform: rotateY(180deg);
+    background: url(../img/false.jpg);
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+

@@ -1,0 +1,37 @@
+.ear-left{
+    transition: transform 2s;
+}
+.face:hover+.ear-wrap .ear-left{
+    transform: rotate(-45deg);
+}
+.ear-right{
+    transition: transform 2s;
+}
+.face:hover+.ear-wrap .ear-right{
+    transform: rotate(45deg);
+}
+.eye-bottom2{
+    transition: transform 2s;
+}
+.face:hover .eye-bottom2{
+    transform: translate(0px,-20px);
+}
+.eye-core2{
+    transition: transform 2s;
+}
+.face:hover .eye-core2{
+    transform: scale(0.7,1);
+}
+.face-red2{
+    transform: scale(0.7,1);
+    transition: opacity 2s;
+}
+.face:hover .face-red2{
+    opacity: 0.5;
+}
+.mouth-ani{
+    transition: border-radius 2s;
+}
+.face:hover .mouth-ani{
+    border-radius: 50%;
+}

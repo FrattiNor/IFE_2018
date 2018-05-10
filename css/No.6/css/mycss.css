@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+.show{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 10px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+.img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.five{
+    width: 100%;
+    z-index: 4;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+.ull{
+    display: inline-block;
+    list-style-type: none;
+    overflow: hidden;
+}
+.five li{
+    float: left;
+    width: 140px;
+    height: 87.5px;
+    margin: 5px;
+    border: 1px solid #000;
+    background-color: #000;
+}
+li img{
+    cursor: pointer;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+li img:hover{
+    opacity: 1;
+}
+.img1{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ani1{
+    animation: img1 1s both ease-out;
+}
+@keyframes img1{
+    0%{
+        left: -500px;
+    }
+    100%{
+        left: 0;
+    }
+}
+.img2{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.ani2{
+    animation: img2 1s both ease-out;
+}
+@keyframes img2{
+    0%{
+        top: 350px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.img3{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ani3{
+    animation: img3 1s both ease-in;
+}
+@keyframes img3{
+    0%{
+        left: 50%;
+        width: 10%;
+        height: 10%;
+    }
+    100%{
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.img4{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ani4{
+    animation: img4 1s both ease-out;
+}
+@keyframes img4{
+    0%{
+        left: -50%;
+        width: 200%;
+        height: 200%;
+    }
+    100%{
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.img5{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ani5{
+    animation: img5 1s both ease-in-out;
+}
+@keyframes img5{
+    0%{
+        left: 50%;
+        top: 50%;
+        width: 10%;
+        height: 10%;
+        transform: rotate(-360deg);
+    }
+    100%{
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(0deg);
+    }
+}

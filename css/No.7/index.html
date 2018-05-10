@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://jadyoap.bj.bcebos.com/ife%2Fmission7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>使用 animate.css 制作流畅交互动效</title>
+
+        <link rel="stylesheet" type="text/css" href="css/mycss.css">
+
+        <style type="text/css">
+            html {
+                font-size: 62.5%;
+                font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            }
+            body {
+                font-size: 1.8em;
+                line-height: 3;
+                background-color: #eeeeee;
+            }
+            h3 {
+                font-size: 1.8em;
+                margin-bottom: 3rem;
+                line-height: 1.5;
+                font-weight: 800;
+            }
+            p {
+                margin-bottom: 1.5rem;
+            }
+            .site-container {
+                max-width: 320px;
+                margin: 10px auto;
+                padding-left: 0.6em;
+                padding-right: 0.6em;
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+            @media screen and (min-width: 60.063em) {
+                .site-container {
+                    max-width: 400px;
+                }
+            }
+            .card {
+                position: relative;
+                overflow: hidden;
+                background-color: white;
+                box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24), 0 1px 18px 0 rgba(0,0,0,0.12);
+                border-radius: 2px;
+                padding: 1em 1.5em;
+            }
+            .form__wrapper {
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                margin-bottom: 1.6rem;
+                width: 100%;
+                vertical-align: top;
+            }
+            .form__wrapper__submit {
+                padding: 1.6rem 0;
+            }
+            .form__input {
+                display: block;
+                position: relative;
+                margin-top: 1em;
+                padding: 0.84em 0;
+                width: 100%;
+                box-sizing: border-box;
+                color: #444;
+                font-size: 1.6rem;
+                outline: 0;
+                border: none;
+                border-bottom: solid 1px #ddd;
+            }
+            .form__input:focus {
+                background-position: 0 0;
+                color: #444;
+            }
+            .form__label {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 0;
+                width: 100%;
+                height: calc(99%);
+                text-align: left;
+                pointer-events: none;
+                color: #999;
+            }
+            .form__label__content {
+                position: absolute;
+            }
+            .form__input:focus ~ .form__label .form__label-content,
+            .form--filled .form__label-content {
+            }
+            .btn {
+                width: 100%;
+                display: inline-block;
+                padding: 0.7em 1.5em;
+                border-radius: 2px;
+                background-color: #2196f3;
+                color: #fff;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                font-family: inherit;
+                font-weight: 400;
+                font-size: 1.6rem;
+                box-shadow: 0 1px 3px 0 rgba(3,30,51,0.24), 0 1px 2px 0 rgba(3,30,51,0.12);
+                transition: all 0.2s ease;
+            }
+            .btn:focus,
+            .btn:hover {
+                background-color: #0d8aee;
+            }
+        </style>
+    <style type="text/css" abt="234"></style><script>//console.log('a')
+</script><script>//remove 17173 video ad
+doAdblock();
+function doAdblock(){
+    (function() {
+        function A() {}
+        A.prototype = {
+            rules: {
+                '17173_in':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_in_20150522.swf"
+                },
+                '17173_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_out_20150522.swf"
+                },
+                '17173_live':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_stream_20150522.swf"
+                },
+                '17173_live_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173.out.Live.swf"
+                }
+            },
+            _done: null,
+            get done() {
+                if(!this._done) {
+                    this._done = new Array();
+                }
+                return this._done;
+            },
+            addAnimations: function() {
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+                document.getElementsByTagName('head')[0].appendChild(style);
+            },
+            animationsHandler: function(e) {
+                if(e.animationName === 'playerInserted') {
+                    this.replace(e.target);
+                }
+            },
+            replace: function(elem) {
+                if(this.done.indexOf(elem) != -1) return;
+                this.done.push(elem);
+                var player = elem.data || elem.src;
+                if(!player) return;
+                var i, find, replace = false;
+                for(i in this.rules) {
+                    find = this.rules[i]['find'];
+                    if(find.test(player)) {
+                        replace = this.rules[i]['replace'];
+                        if('function' === typeof this.rules[i]['preHandle']) {
+                            this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                        }else{
+                            this.reallyReplace.bind(this, elem, find, replace)();
+                        }
+                        break;
+                    }
+                }
+            },
+            reallyReplace: function(elem, find, replace) {
+                elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+                var b = elem.querySelector("param[name='movie']");
+                this.reloadPlugin(elem);
+            },
+            reloadPlugin: function(elem) {
+                var nextSibling = elem.nextSibling;
+                var parentNode = elem.parentNode;
+                parentNode.removeChild(elem);
+                var newElem = elem.cloneNode(true);
+                this.done.push(newElem);
+                if(nextSibling) {
+                    parentNode.insertBefore(newElem, nextSibling);
+                } else {
+                    parentNode.appendChild(newElem);
+                }
+            },
+            init: function() {
+                var handler = this.animationsHandler.bind(this);
+                document.body.addEventListener('webkitAnimationStart', handler, false);
+                document.body.addEventListener('msAnimationStart', handler, false);
+                document.body.addEventListener('oAnimationStart', handler, false);
+                document.body.addEventListener('animationstart', handler, false);
+                this.addAnimations();
+            }
+        };
+        new A().init();
+    })();
+}
+//remove baidu search ad
+if(document.URL.indexOf('www.baidu.com') >= 0){
+    if(document && document.getElementsByTagName && document.getElementById && document.body){
+        var aa = function(){
+            var all = document.body.querySelectorAll("#content_left div,#content_left table");
+            for(var i = 0; i < all.length; i++){
+                if(/display:\s?(table|block)\s!important/.test(all[i].getAttribute("style"))){all[i].style.display= "none";all[i].style.visibility='hidden';}
+            }
+            all = document.body.querySelectorAll('.result.c-container[id="1"]');
+            //if(all.length == 1) return;
+            for(var i = 0; i < all.length; i++){
+                if(all[i].innerHTML && all[i].innerHTML.indexOf('广告')>-1){
+                    all[i].style.display= "none";all[i].style.visibility='hidden';
+                }
+            }
+        }
+        aa();
+        document.getElementById('wrapper_wrapper').addEventListener('DOMSubtreeModified',aa)
+    };
+}
+//remove sohu video ad
+if (document.URL.indexOf("tv.sohu.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//remove 56.com video ad
+if (document.URL.indexOf("56.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//fore iqiyi enable html5 player function
+if (document.URL.indexOf("iqiyi.com") >= 0){
+    if (document.cookie.indexOf("player_forcedType=h5_VOD")==-1){
+        document.cookie='player_forcedType=h5_VOD'
+        if(localStorage.reloadTime && Date.now() - parseInt(localStorage.reloadTime)<60000){
+            console.log('no reload')
+        }else{
+            location.reload()
+            localStorage.reloadTime = Date.now();
+        }
+    }
+}
+</script><style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style></head>
+    <body style="">
+        <section class="site-container">
+            <section class="card">
+                <h3>Login</h3>
+                <form>
+                    <div class="form__wrapper" data-wow-delay="0.5s">
+                        <input type="email" class="form__input" id="email" name="email">
+                        <label class="form__label form__label2" for="email">
+                        <span class="form__label__content">Email</span>
+                        </label>
+                    </div>
+                    <div class="form__wrapper" data-wow-delay="0.6s">
+                        <input type="password" class="form__input" id="password" name="password">
+                        <label class="form__label form__label2" for="password">
+                        <span class="form__label__content">Password</span>
+                        </label>
+                    </div>
+                    <div class="form__wrapper__submit pulse infinite" data-wow-delay="0.7s">
+                        <div class="form__input__submit">
+                            <button type="submit" name="submit" class="btn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/myjs.js"></script>
+</body></html>
