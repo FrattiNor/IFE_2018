@@ -19,5 +19,5 @@ demo预览链接
 >
 >[No.7 - 使用 animate.css 实现一个优雅的登录框](https://frattinor.github.io/IFE_2018/css/No.7/index.html)
 >
->
+>[No.8 - 把 AE 动画转换成 Web 原生动画](https://frattinor.github.io/IFE_2018/css/No.8/index.html)
 >
