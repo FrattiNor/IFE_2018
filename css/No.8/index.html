@@ -9,13 +9,19 @@
     <div id="animation"></div>
     <div id="animation2"></div>
     <script>
-        lottie.loadAnimation({
+        let j2 = lottie.loadAnimation({
             container: document.getElementById("animation"),
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'data3.json'
+            path: 'data2.json'
         });
+        // document.getElementById("animation").addEventListener(mouseenter,function(){
+        //     j2.play();
+        // },false);
+        // document.getElementById("animation").addEventListener(mouseleave,function(){
+        //     j2.stop();
+        // },false);
     </script>
 
     <script src="js/myjs.js"></script>
