@@ -4,6 +4,7 @@
       <router-link tag="li" v-bind:to="{name: 'MVVM2_2'}">MVVM-2.2</router-link>
       <router-link tag="li" v-bind:to="{name: 'MVVM2_3'}">MVVM-2.3</router-link>
       <router-link tag="li" v-bind:to="{name: 'MVVM2_4'}">MVVM-2.4</router-link>
+      <router-link tag="li" v-bind:to="{name: 'MVVM3_1'}">MVVM-3.1</router-link>
 </ul>
 </template>
 

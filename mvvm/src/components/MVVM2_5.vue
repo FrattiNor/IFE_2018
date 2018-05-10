@@ -19,7 +19,6 @@
             </div>
         </div>
     </div>
-    <div class="mm25_2"></div>
 </div>
 </template>
 
@@ -64,16 +63,12 @@ export default {
 <style scoped>
 .mm25{
     width: 90%;
-    height: 800px;
+    height: 400px;
     /*border: 1px solid #000;*/
     margin: auto;
 }
 .mm25_1{
-    height: 50%;
-    border: 1px solid #ddd;
-}
-.mm25_2{
-    height: 50%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 .mm25_head{
