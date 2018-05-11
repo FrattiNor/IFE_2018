@@ -6,7 +6,9 @@
 >
 >[2.3 样式控制](https://frattinor.github.io/IFE_2018/mvvm/myDist-2-3)
 >
+>[2.4事件处理](https://frattinor.github.io/IFE_2018/mvvm/myDist-2-4)
 >
+>[3.1 用递归的方式实现级联组件](https://frattinor.github.io/IFE_2018/mvvm/myDist-3-1)
 >
 >
 >下载

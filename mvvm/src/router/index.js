@@ -53,6 +53,7 @@ let main = new Router({
               path: '/select_3',
               name: 'select_3',
               component: select_3,
+              props: { id_1,id_2 }
             }
           ]
         },
